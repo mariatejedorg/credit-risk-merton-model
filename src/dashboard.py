@@ -5,6 +5,7 @@ literalmente para dar continuidad visual entre proyectos del portfolio.
 """
 
 import sys
+from datetime import datetime
 from pathlib import Path
 
 import pandas as pd
@@ -142,6 +143,8 @@ def build_dashboard(
     )
     tiles_html = _kpi_tiles_html(ticker, float(E.iloc[-1]), D, float(V.iloc[-1]), sigma_V, dd)
 
+    run_timestamp = datetime.now().strftime("%d/%m/%Y %H:%M")
+
     page = f"""<!DOCTYPE html>
 <html lang="es">
 <head>
@@ -215,7 +218,7 @@ def build_dashboard(
   <div class="hero-inner">
     <h1>Credit Risk: Merton Structural Model</h1>
     <p>El equity de {ticker} tratado como una opción call sobre sus activos — reutilizando el motor de Black-Scholes del Proyecto 6 para estimar su probabilidad de impago.</p>
-    <div class="meta">Datos en vivo vía yfinance (equity + balance) · metodología KMV</div>
+    <div class="meta">Datos en vivo vía yfinance (equity + balance) · metodología KMV · Última ejecución: {run_timestamp}</div>
   </div>
 </div>
 
