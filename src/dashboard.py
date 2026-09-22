@@ -191,7 +191,10 @@ def build_dashboard(
     padding: 16px 18px;
   }}
   .tile-label {{ font-size: 0.72rem; color: var(--ink-muted); text-transform: uppercase; letter-spacing: 0.04em; }}
-  .tile-value {{ font-size: 1.55rem; font-weight: 700; color: var(--ink-primary); margin: 6px 0 2px; }}
+  .tile-value {{
+    font-size: 1.55rem; font-weight: 700; color: var(--ink-primary); margin: 6px 0 2px;
+    overflow-wrap: break-word;
+  }}
   .tile-sublabel {{ font-size: 0.8rem; color: var(--ink-secondary); }}
 
   .card {{
